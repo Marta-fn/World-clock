@@ -5,6 +5,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="src/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+    rel="stylesheet">
   <title>World Clocks</title>
 </head>
 
@@ -13,15 +17,34 @@
     <h1>World Clocks</h1>
   </header>
   <main>
-    <div class="currtent-city">The time in Lisbon, Portugal now</div>
+    <div class="currtent-city">The time in <span id="city">Lisbon, Portugal</span> now:</div>
     <div class="current-time">17:18:55</div>
     <div class="current-date">Friday, March 15, 2024</div>
-    <select name="" id="">
-      <option value="">Select a city...</option>
-      <option value="">London</option>
-      <option value="">New York</option>
-      <option value="">Tokyo</option>
-    </select>
+    <div class="select">
+      <select name="" id="optionCity">
+        <option value="">Select a city...</option>
+        <option value="">London</option>
+        <option value="">New York</option>
+        <option value="">Tokyo</option>
+      </select>
+    </div>
+    <div class="container">
+      <div>
+        <h2 class="city-name">Paris</h2>
+        <p class="city-time">17:18:55</p>
+        <p class="city-date">Friday, March 15, 2024</p>
+      </div>
+      <div>
+        <h2 class="city-name">Paris</h2>
+        <p class="city-time">17:18:55</p>
+        <p class="city-date">Friday, March 15, 2024</p>
+      </div>
+      <div>
+        <h2 class="city-name">New York</h2>
+        <p class="city-time">17:18:55</p>
+        <p class="city-date">Friday, March 15, 2024</p>
+      </div>
+    </div>
   </main>
   <footer>
     This project was coded by <a href="https://github.com/Marta-fn" target="_blank">Marta Nogueira</a> and is on <a

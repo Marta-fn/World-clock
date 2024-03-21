@@ -1,4 +1,76 @@
-footer {
+body {
+  background: rgba(212, 222, 230, 0.5);
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+h1 {
   text-align: center;
-  font-size: 10;
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding-bottom: 15px;
+  border-bottom: 1px dashed rgb(212, 222, 230);
+}
+
+.currtent-city {
+  font-size: 40px;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+#city {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.current-time {
+  font-size: 200px;
+  text-align: right;
+  line-height: 1;
+}
+
+.current-date {
+  font-size: 30px;
+  color: rgba(0, 0, 0, 0.5);
+  text-align: right;
+}
+
+.select {
+  display: flex;
+  justify-content: flex-end;
+}
+
+#optionCity {
+  font-size: 18px;
+  border-radius: 4px;
+  padding: 10px;
+  width: 25%;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  color: rgba(0, 0, 0, 0.5);
+  background: rgba(212, 222, 230, 0.8);
+}
+
+select:hover {
+  cursor: pointer;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  font-size: 18px;
+}
+
+footer {
+  padding-top: 15px;
+  text-align: center;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+footer a {
+  color: rgb(0, 0, 0);
+  font-weight: bold;
 }
