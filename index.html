@@ -9,6 +9,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
     rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.45/moment-timezone-with-data-1970-2030.min.js"></script>
   <title>World Clocks</title>
 </head>
 
@@ -24,25 +27,25 @@
       <select name="" id="optionCity">
         <option value="">Select a city...</option>
         <option value="">London</option>
-        <option value="">New York</option>
-        <option value="">Tokyo</option>
+        <option value="">Paris</option>
+        <option value="">Madrid</option>
       </select>
     </div>
     <div class="container">
-      <div>
-        <h2 class="city-name">Paris</h2>
-        <p class="city-time">17:18:55</p>
-        <p class="city-date">Friday, March 15, 2024</p>
+      <div id="berlin">
+        <h2>Berlin</h2>
+        <p class="city-time"></p>
+        <p class="city-date"></p>
       </div>
-      <div>
-        <h2 class="city-name">Paris</h2>
-        <p class="city-time">17:18:55</p>
-        <p class="city-date">Friday, March 15, 2024</p>
+      <div id="newyork">
+        <h2>New York</h2>
+        <p class="city-time"></p>
+        <p class="city-date"></p>
       </div>
-      <div>
-        <h2 class="city-name">New York</h2>
-        <p class="city-time">17:18:55</p>
-        <p class="city-date">Friday, March 15, 2024</p>
+      <div id="tokyo">
+        <h2>Tokyo</h2>
+        <p class="city-time"></p>
+        <p class="city-date"></p>
       </div>
     </div>
   </main>
