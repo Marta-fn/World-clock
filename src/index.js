@@ -16,12 +16,15 @@ setInterval(function () {
 
 function inicialTime() {
   let currentCityElement = document.querySelector("#currentCity");
-  let currentDateElement = currentCityElement.querySelector(".current-date");
-  let currentTimeElement = currentCityElement.querySelector(".current-time");
   let currentCityTime = moment().tz("Europe/Lisbon");
-
-  currentDateElement.innerHTML = currentCityTime.format("dddd, MMMM DD, YYYY");
-  currentTimeElement.innerHTML = currentCityTime.format("HH:mm:ss");
+  currentCityElement.innerHTML = `
+      <div class="currtent-city">
+      The time in <span id="city">Lisbon</span> now:</div>
+      <div class="current-time">
+      ${currentCityTime.format("HH:mm:ss")}</div>
+      <div class="current-date">${currentCityTime.format(
+        "dddd, MMMM DD, YYYY"
+      )}</div>`;
 
   let citiesSelect = document.querySelector("#optionCity");
   citiesSelect.addEventListener("change", updateCity);
@@ -31,15 +34,20 @@ function updateCity(event) {
   let optionCityTimeZone = event.target.value;
   if (event.target.value.length > 0) {
     let optionCityTime = moment().tz(optionCityTimeZone);
-    let currentCityElement = document.querySelector("#currentCity");
-    let currentDateElement = currentCityElement.querySelector(".current-date");
-    let currentTimeElement = currentCityElement.querySelector(".current-time");
-    currentDateElement.innerHTML = optionCityTime.format("dddd, MMMM DD, YYYY");
-    currentTimeElement.innerHTML = optionCityTime.format("HH:mm:ss");
+    let optionCityName = optionCityTimeZone.replace("_", " ").split("/");
+    optionCityElement = document.querySelector("#currentCity");
+    optionCityElement.innerHTML = `
+      <div class="currtent-city">
+      The time in <span id="city">${optionCityName[1]}</span> now:</div>
+      <div class="current-time">
+      ${optionCityTime.format("HH:mm:ss")}</div>
+      <div class="current-date">${optionCityTime.format(
+        "dddd, MMMM DD, YYYY"
+      )}</div>`;
   } else {
     inicialTime();
   }
 }
 
 inicialTime();
-setInterval(inicialTime, 1000);
+//setInterval(inicialTime, 1000);
