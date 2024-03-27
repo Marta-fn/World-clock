@@ -16,10 +16,12 @@ setInterval(function () {
 
 function inicialTime() {
   let currentCityElement = document.querySelector("#currentCity");
-  let currentCityTime = moment().tz("Europe/Lisbon");
+  let currentTimeZone = moment.tz.guess();
+  let currentCityTime = moment().tz(currentTimeZone);
+  let currentCityName = currentTimeZone.replace("_", " ").split("/");
   currentCityElement.innerHTML = `
       <div class="currtent-city">
-      The time in <span id="city">Lisbon</span> now:</div>
+      The time in <span id="city">${currentCityName[1]}</span> now:</div>
       <div class="current-time">
       ${currentCityTime.format("HH:mm:ss")}</div>
       <div class="current-date">${currentCityTime.format(
@@ -31,6 +33,7 @@ function inicialTime() {
 }
 
 function updateCity(event) {
+  clearInterval(currentTime);
   let optionCityTimeZone = event.target.value;
   if (event.target.value.length > 0) {
     let optionCityTime = moment().tz(optionCityTimeZone);
@@ -46,8 +49,13 @@ function updateCity(event) {
       )}</div>`;
   } else {
     inicialTime();
+    updateCurrentTime();
   }
 }
 
+function updateCurrentTime() {
+  currentTime = setInterval(inicialTime, 1000);
+}
+
 inicialTime();
-//setInterval(inicialTime, 1000);
+updateCurrentTime();
