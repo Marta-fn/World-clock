@@ -33,13 +33,14 @@ function inicialTime() {
 }
 
 function updateCity(event) {
-  clearInterval(currentTime);
-  let optionCityTimeZone = event.target.value;
-  if (event.target.value.length > 0) {
-    let optionCityTime = moment().tz(optionCityTimeZone);
-    let optionCityName = optionCityTimeZone.replace("_", " ").split("/");
-    optionCityElement = document.querySelector("#currentCity");
-    optionCityElement.innerHTML = `
+  setInterval(function () {
+    clearInterval(currentTime);
+    let optionCityTimeZone = event.target.value;
+    if (event.target.value.length > 0) {
+      let optionCityTime = moment().tz(optionCityTimeZone);
+      let optionCityName = optionCityTimeZone.replace("_", " ").split("/");
+      optionCityElement = document.querySelector("#currentCity");
+      optionCityElement.innerHTML = `
       <div class="currtent-city">
       The time in <span id="city">${optionCityName[1]}</span> now:</div>
       <div class="current-time">
@@ -47,10 +48,11 @@ function updateCity(event) {
       <div class="current-date">${optionCityTime.format(
         "dddd, MMMM DD, YYYY"
       )}</div>`;
-  } else {
-    inicialTime();
-    updateCurrentTime();
-  }
+    } else {
+      inicialTime();
+      updateCurrentTime();
+    }
+  }, 1000);
 }
 
 function updateCurrentTime() {
